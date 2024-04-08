@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "deploy": "git init && git add . && git commit -m \"deployed\" && git push -u origin main"
+    "deploy": "git init && git add . && git commit -m \"deployed\" && git push -u origin main",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
