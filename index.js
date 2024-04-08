@@ -14,6 +14,7 @@ const cars = require('./cars.json');
 // get all cars
 app.get('/cars', (req, res) => {
     res.json(cars);
+
 });
 
 //
@@ -31,7 +32,7 @@ app.put('/cars/:id', (req, res) => {
     const updatedCar = req.body;
     const index = cars.findIndex(car => car.id === id);
     cars[index] = updatedCar;
-    res.json(updatedCar);
+    res.json(updatedCar);    console.log('hip')
 });
 
 //delete car
@@ -39,7 +40,7 @@ app.delete('/cars/:id', (req, res) => {
     const id = req.params.id;
     const index = cars.findIndex(car => car.id === id);
     cars.splice(index, 1);
-    res.json({ message: `Car with id ${id} deleted` });
+    res.json({ message: `Car with id ${id} deleted` });     console.log('hid')
 });
 
 //add car
@@ -48,10 +49,10 @@ app.post('/cars', (req, res) => {
     const newCar = req.body;
     console.log(newCar);
     cars.push(newCar);
-    res.json(newCar);
+    res.json(newCar);    console.log('hipo')
 });
 
-// app.use(express.static(path.resolve(__dirname, './'), { maxAge : '1y', etag: false}));
+app.use(express.static(path.resolve(__dirname, './'), { maxAge : '1y', etag: false}));
 
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './index.html'));
